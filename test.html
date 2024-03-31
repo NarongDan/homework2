@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Radio Button Color</title>
+<style>
+/* Hide the default radio button */
+input[type="radio"] {
+  display: none;
+}
+
+/* Style the custom radio button */
+.custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  position: relative;
+}
+
+/* Style the inner dot */
+.custom-radio::before {
+  content: "";
+  position: absolute;
+  /* top: 3px;
+  left: 3px; */
+  width: 12px;
+  height: 12px;
+  background-color: #a83131; /* Color of the dot */
+  border-radius: 50%;
+  display: none;
+}
+
+/* Show the inner dot when radio is checked */
+input[type="radio"]:checked + .custom-radio::before {
+  display: block;
+}
+
+/* Change color when radio is checked */
+input[type="radio"]:checked + .custom-radio {
+  border-color: #007bff; /* New color of the radio button */
+}
+</style>
+</head>
+<body>
+
+<!-- Radio buttons with custom styling -->
+<label>
+  <input type="radio" name="customRadio" value="option1">
+  <span class="custom-radio"></span>
+  Option 1
+</label>
+<br>
+<label>
+  <input type="radio" name="customRadio" value="option2">
+  <span class="custom-radio"></span>
+  Option 2
+</label>
+<br>
+<label>
+  <input type="radio" name="customRadio" value="option3">
+  <span class="custom-radio"></span>
+  Option 3
+</label>
+
+</body>
+</html>
